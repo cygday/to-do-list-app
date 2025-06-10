@@ -1,0 +1,26 @@
+{
+  "name": "to-do-list-app",
+  "version": "1.0.0",
+  "description": "to-do-list-app",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js",	  
+    "test": "to-do-list-app",
+    "build": "echo 'no build sstep yet'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cygday/to-do-list-app.git"
+  },
+  "keywords": [
+    "to-do-list",
+    "todolistapp",
+    "to-do-list-app"
+  ],
+  "author": "codingnepal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cygday/to-do-list-app/issues"
+  },
+  "homepage": "https://github.com/cygday/to-do-list-app#readme"
+}
