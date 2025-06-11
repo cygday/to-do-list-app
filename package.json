@@ -2,9 +2,9 @@
   "name": "to-do-list-app",
   "version": "1.0.0",
   "description": "to-do-list-app",
-  "main": "script.js",
+  "main": "app/script.js",
   "scripts": {
-    "start": "node script.js",	  
+    "start": "node app/script.js",
     "test": "to-do-list-app",
     "build": "echo 'no build sstep yet'"
   },
