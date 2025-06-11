@@ -1,7 +1,7 @@
 
 
 pipeline {
-	agent any {
+	agent any 
 
 	tools {
 		sonarQubeScanner 'SonarScanner'
@@ -25,6 +25,7 @@ pipeline {
 			}
 		}
 	}
-    }
 
 }
+
+
