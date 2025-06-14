@@ -14,12 +14,12 @@ pipeline {
 			steps {
 				git branch: 'main', url: 'https://github.com/cygday/to-do-list-app.git'
 			}
-	
+		   } 
 		   stage('Install Dependencies') {
                steps {
                    sh 'npm install'
-               }
-           }
+               	    }
+           	}
 
         stage('SonarQube Analysis') {
                steps {
