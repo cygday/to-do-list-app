@@ -22,8 +22,7 @@ pipeline {
         stage('SonarQube Analysis') {
                steps {
                    withSonarQubeEnv('jenkins-sonarqube-todolist') { // 'sonarqube_instance' is the name you gave in Jenkins
-                       sh 'sonar-scanner -Dsonar.projectKey=todo-list-app -Dsonar.projectName=to-do-list app -Dsonar.host.url=http://localhost:9000 -Dsonar.login=squ_d3ad48f1383c65855bb6e47244e445989bc0ce1c -Dsonar.sources=to-do-list-app -Dsonar.tests=test'
-                   }
+                       sh 'sonar-scanner'   }
                }
            }
 
@@ -48,7 +47,8 @@ pipeline {
    }
 
 
-
+/*...-Dsonar.projectKey=todo-list-app -Dsonar.projectName=to-do-list app -Dsonar.host.url=http://localhost:9000 -Dsonar.login=squ_d3ad48f1383c65855bb6e47244e445989bc0ce1c -Dsonar.sources=to-do-list-app -Dsonar.tests=test'...*/
+                 
 
 
 
