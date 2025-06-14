@@ -1,5 +1,3 @@
-
-
 pipeline {
 	agent any
 	
@@ -49,11 +47,4 @@ pipeline {
 		   sh 'post_failure'
            }
        }
-   }
-
-
-/*...-Dsonar.projectKey=todo-list-app -Dsonar.projectName=to-do-list app -Dsonar.host.url=http://localhost:9000 -Dsonar.login=squ_d3ad48f1383c65855bb6e47244e445989bc0ce1c -Dsonar.sources=to-do-list-app -Dsonar.tests=test'...*/
-                 
-
-
-
+   }                 
