@@ -2,12 +2,13 @@
 
 pipeline {
 	agent any
+	
 	tools {
 		sonarQubeScanner 'SonarScanner'
 	}
 	
 	environment {
-		SONARQUBE_ENV = 'jenkins-sonarqube-todolist'
+		SONAR_TOKEN = credentials('jenkins-sonarqube-todolist')
 	}
 
 	stages {
@@ -15,7 +16,7 @@ pipeline {
 			steps {
 				git branch: 'main', url: 'https://github.com/cygday/to-do-list-app.git'
 			}
-		}
+	
 		   stage('Install Dependencies') {
                steps {
                    sh 'npm install'
@@ -24,8 +25,9 @@ pipeline {
 
         stage('SonarQube Analysis') {
                steps {
-                   withSonarQubeEnv('jenkins-sonarqube-todolist') { // 'sonarqube_instance' is the name you gave in Jenkins
-                       sh 'sonar-scanner'   }
+                   withSonarQubeEnv('jenkins-sonarqube-todolist') { 
+                       sh 'sonar-scanner -Dsonar.login=$SONAR_TOKEN'
+		   }
                }
            }
 
