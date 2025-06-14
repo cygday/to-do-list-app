@@ -47,4 +47,4 @@ pipeline {
 		   sh 'post_failure'
            }
        }
-   }                 
+}
