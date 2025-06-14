@@ -15,26 +15,26 @@ pipeline {
 				git branch: 'main', url: 'https://github.com/cygday/to-do-list-app.git'
 			}
 		   } 
-		   stage('Install Dependencies') {
-               steps {
-                   sh 'npm install'
+		stage('Install Dependencies') {
+               		steps {
+                   		sh 'npm install'
                	    }
            	}
 
-        stage('SonarQube Analysis') {
-               steps {
-                   withSonarQubeEnv('jenkins-sonarqube-todolist') { 
-                       sh 'sonar-scanner -Dsonar.login=$SONAR_TOKEN'
-		   }
-               }
+	        stage('SonarQube Analysis') {
+               		steps {
+                   		withSonarQubeEnv('jenkins-sonarqube-todolist') { 
+                       			sh 'sonar-scanner'
+		   	}
+               	}
            }
 
-        stage('Run Tests') {
-               steps {
-                   sh 'npm run test'
-               }
-           }
-       }
+        	stages ('Run Tests') {
+               		steps {
+                   		sh 'npm run test'
+               		}	
+           	}
+       	}
 
         post {
            success {
