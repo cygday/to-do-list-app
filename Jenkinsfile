@@ -1,10 +1,7 @@
 
 
 pipeline {
-	agent any 
-	tools {
-		sonarQubeScanner 'jenkins-sonarqube-todolist'
-	}
+	agent any
 	environment {
 		SONARQUBE_ENV = 'jenkins-sonarqube-todolist'
 	}
