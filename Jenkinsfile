@@ -23,9 +23,9 @@ pipeline {
                		steps {
                    		withSonarQubeEnv('jenkins-sonarqube-todolist') { 
                        			sh 'sonar-scanner'
-		   	}
-               	}
-           }
+		   		}
+               		}
+           	}
 
         	stage('Run Tests') {
                		steps {
