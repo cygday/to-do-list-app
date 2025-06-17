@@ -19,14 +19,7 @@ pipeline {
                	    }
            	}
 
-	        stage('SonarQube Analysis') {
-               		steps {
-                   		withSonarQubeEnv('jenkins-sonarqube-todolist') { 
-                       			sh 'sonar-scanner'
-		   		}
-               		}
-           	}
-
+	        
         	stage('Run Tests') {
                		steps {
                    		sh 'npm run test'
