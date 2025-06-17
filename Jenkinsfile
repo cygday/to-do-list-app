@@ -18,6 +18,13 @@ pipeline {
                    		sh 'npm install'
                	    }
            	}
+		stage('SonarQube Analysis') {
+               		steps {
+                   		withSonarQubeEnv('jenkins-sonarqube-todolist') { 
+                       			sh 'sonar-scanner'
+		   		}
+               		}
+           	}
 
 	        
         	stage('Run Tests') {
@@ -29,12 +36,9 @@ pipeline {
 
         post {
            success {
-               // You can add any actions here after successful build
-               // Example:  Send a notification
 		   sh 'post_success'
            }
            failure {
-               // Actions to take on failure
 		   sh 'post_failure'
            }
        }
