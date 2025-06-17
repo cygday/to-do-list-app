@@ -6,7 +6,7 @@ pipeline {
 	}
 	
 	environment {
-		SONAR_TOKEN = credentials('jenkins-sonar')
+		SONAR_TOKEN = credentials('jenkins-sonarqube-todolist')
 	}
 
 	stages {
